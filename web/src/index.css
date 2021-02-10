@@ -1,0 +1,120 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i,600,700,700i&display=swap");
+
+@layer base {
+  * {
+    font-family: "Josefin Sans", sans-serif;
+    @apply box-border;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    height: 100vh;
+    @apply bg-background-dark text-white;
+  }
+
+  #redwood-app {
+    height: 100%;
+  }
+
+  nav a {
+    @apply text-base mx-5 transition py-2 px-4 cursor-pointer hover:bg-brand;
+  }
+
+  main {
+    @apply w-full m-0;
+  }
+
+  main > section {
+    @apply p-5 bg-brand-dark max-h-full my-5 w-2/3 mx-auto rounded-xl transition-all duration-200;
+  }
+
+  main section header {
+    @apply my-5;
+  }
+
+  main section header h2 {
+    @apply text-2xl;
+  }
+
+  main section header hr {
+    @apply w-20;
+  }
+
+  hr {
+    @apply border-accent-dark;
+  }
+
+  /** Home Section **/
+  section#home {
+    @apply w-full rounded-none bg-brand-translucent m-0 h-screen flex flex-col justify-center items-center;
+  }
+
+  #title {
+    @apply text-5xl;
+  }
+
+  .jobs {
+    @apply flex;
+  }
+
+  .jobs li{
+    @apply relative px-8;
+  }
+
+  .jobs li::after {
+    @apply w-1.5 h-1.5 inline-block bg-white absolute -mt-1;
+    content: "";
+    top: 50%;
+    right: -3px;
+    border-radius: 50%;
+  }
+
+  .jobs li:last-child::after {
+    display: none;
+  }
+
+  /** Contact Section **/
+  .contact-form {
+    @apply justify-center flex-col border-none border-gray-300 p-5 rounded-xl mb-5;
+  }
+
+  .contact-form textarea {
+    @apply block p-1 text-base text-brand-dark rounded-xl overflow-auto border-gray-400 border-2 resize-none;
+  }
+
+  .contact-form label {
+    @apply block text-xl text-white font-semibold;
+  }
+
+  .contact-form button {
+    @apply block p-2 text-xl font-semibold bg-brand rounded-xl text-white;
+  }
+
+  .contact-form input {
+    @apply border rounded-xl p-1 text-base text-brand-dark;
+  }
+
+  #contact .error {
+    @apply text-red-600 block
+  }
+
+  /** Service Section **/
+  .service-card {
+    @apply border border-brand-dark text-white p-5 bg-brand mx-5 rounded-xl transition transform hover:bg-brand-dark hover:text-white-light hover:border-white;
+  }
+
+  .service-card h3 {
+    @apply text-2xl underline my-2 text-center;
+  }
+ }

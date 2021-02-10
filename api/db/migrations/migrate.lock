@@ -1,0 +1,4 @@
+# Prisma Migrate lockfile v1
+
+20210208152329-create-blog
+20210208153323-remove-user
