@@ -1,0 +1,27 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateArgument",
+      "location": {
+        "tag": "Source",
+        "source": "DS"
+      },
+      "argument": "provider",
+      "newValue": "\"postgresql\""
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "Contact"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "Comment"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "comments"
+    }
+  ]
+}
