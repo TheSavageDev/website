@@ -23,8 +23,8 @@ const HomePage = () => {
   const handleScroll = () => {
     if (window.scrollY > 20) {
       setTitle('Jason A Savage')
-      document.querySelector('#nav-header').classList.remove('justify-end')
-      document.querySelector('#nav-header').classList.add('justify-center')
+      document.querySelector('#nav-header').classList.remove('sm:justify-end')
+      document.querySelector('#nav-header').classList.add('md:justify-center')
       document.querySelector('#catholic').classList.remove('hidden')
     }
 
@@ -40,8 +40,10 @@ const HomePage = () => {
 
     if (window.scrollY < 20) {
       setTitle('a Savage')
-      document.querySelector('#nav-header').classList.add('justify-end')
-      document.querySelector('#nav-header').classList.remove('justify-center')
+      document.querySelector('#nav-header').classList.add('sm:justify-end')
+      document
+        .querySelector('#nav-header')
+        .classList.remove('md:justify-center')
       document.querySelector('#catholic').classList.add('hidden')
     }
     if (window.scrollY < 30) {
@@ -67,21 +69,21 @@ const HomePage = () => {
           <header>
             <h2 id="title">I am {title}</h2>
           </header>
-          <section className="m-5 flex flex-wrap justify-between">
-            <ul className="jobs">
-              <li id="catholic" className="text-lg mx-2 hidden">
+          <section className="flex flex-wrap justify-between">
+            <article className="jobs">
+              <span id="catholic" className="text-lg mx-2 hidden">
                 Catholic
-              </li>
-              <li id="father" className="text-lg mx-2 hidden">
+              </span>
+              <span id="father" className="text-lg mx-2 hidden">
                 Father
-              </li>
-              <li id="husband" className="text-lg mx-2 hidden">
+              </span>
+              <span id="husband" className="text-lg mx-2 hidden">
                 Husband
-              </li>
-              <li id="se" className="text-lg mx-2 hidden">
+              </span>
+              <span id="se" className="text-lg mx-2 hidden">
                 Software Engineer
-              </li>
-            </ul>
+              </span>
+            </article>
           </section>
         </section>
         <section id="about">
@@ -149,7 +151,7 @@ const HomePage = () => {
             <h2>Services</h2>
             <hr />
           </header>
-          <section className="flex justify-between">
+          <section className="flex flex-wrap justify-between md:flex-nowrap">
             <article className="service-card">
               <header>
                 <h3>Research</h3>

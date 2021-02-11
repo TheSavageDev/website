@@ -28,26 +28,34 @@
   }
 
   nav a {
-    @apply text-base mx-5 transition py-2 px-4 cursor-pointer hover:bg-brand;
+    @apply text-base mx-1 transition py-2 px-4 cursor-pointer hover:bg-brand;
   }
 
   main {
     @apply w-full m-0;
   }
 
-  main > section {
-    @apply p-5 bg-brand-dark max-h-full my-5 w-2/3 mx-auto rounded-xl transition-all duration-200;
+  #about,
+  #services,
+  #work {
+    @apply p-5 bg-brand-dark max-h-full my-5 w-full rounded-xl transition-all duration-200 md:w-3/4 md:mx-auto lg:w-2/3;
   }
 
-  main section header {
-    @apply my-5;
+  #about header,
+  #services header,
+  #work header {
+    @apply mb-5;
   }
 
-  main section header h2 {
+  #about header h2,
+  #services header h2,
+  #work header h2 {
     @apply text-2xl;
   }
 
-  main section header hr {
+  #about header hr,
+  #services header hr,
+  #work header hr {
     @apply w-20;
   }
 
@@ -56,32 +64,20 @@
   }
 
   /** Home Section **/
-  section#home {
-    @apply w-full rounded-none bg-brand-translucent m-0 h-screen flex flex-col justify-center items-center;
+  #home {
+    @apply w-screen bg-brand-translucent h-screen flex flex-col justify-center items-center;
   }
 
   #title {
-    @apply text-5xl;
+    @apply text-3xl;
   }
 
   .jobs {
-    @apply flex;
+    @apply flex flex-wrap justify-center;
   }
 
-  .jobs li{
-    @apply relative px-8;
-  }
-
-  .jobs li::after {
-    @apply w-1.5 h-1.5 inline-block bg-white absolute -mt-1;
-    content: "";
-    top: 50%;
-    right: -3px;
-    border-radius: 50%;
-  }
-
-  .jobs li:last-child::after {
-    display: none;
+  .jobs span{
+    @apply relative px-2;
   }
 
   /** Contact Section **/
@@ -111,7 +107,7 @@
 
   /** Service Section **/
   .service-card {
-    @apply border border-brand-dark text-white p-5 bg-brand mx-5 rounded-xl transition transform hover:bg-brand-dark hover:text-white-light hover:border-white;
+    @apply my-1 border border-brand-dark text-white p-5 bg-brand mx-5 rounded-xl transition transform hover:bg-brand-dark hover:text-white-light hover:border-white;
   }
 
   .service-card h3 {
