@@ -1,31 +1,15 @@
-const { routes } = require('@redwoodjs/router/dist/internal')
-const { Link } = require('@redwoodjs/router/dist/links')
+import { Link, routes } from '@redwoodjs/router/dist/internal'
 
 const BlogLayout = ({ children }) => {
   return (
     <>
-      <header>
-        <nav>
-          <ul className="flex">
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.home()}>Home</Link>
-            </li>
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.about()}>About</Link>
-            </li>
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.service()}>Service</Link>
-            </li>
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.work()}>Work</Link>
-            </li>
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.contact()}>Contact</Link>
-            </li>
-            <li className="mx-5 hover:shadow transition">
-              <Link to={routes.blog()}>Blog</Link>
-            </li>
-          </ul>
+      <header className="flex items-center justify-between bg-background-translucent text-white font-semibold bg-opacity-40">
+        <h1 className="text-5xl text-brand-light ml-5">JS</h1>
+        <nav
+          id="blog-nav-header"
+          className="py-5 sm:flex sm:flex-wrap sm:justify-center md:justify-end"
+        >
+          <Link to={routes.home()}>Home</Link>
         </nav>
       </header>
       {children}

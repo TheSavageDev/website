@@ -9,6 +9,10 @@ import {
   CheckboxField,
 } from '@redwoodjs/forms'
 import MainLayout from 'src/layouts/MainLayout/MainLayout'
+import headshot from '../../assets/images/headshot.png'
+import trendySavages from '../../assets/images/ts.png'
+import orthoAthletic from '../../assets/images/orthoathletic.png'
+import cross from '../../assets/images/flag.jpg'
 
 const HomePage = () => {
   const [title, setTitle] = useState('a Savage')
@@ -22,9 +26,13 @@ const HomePage = () => {
 
   const handleScroll = () => {
     if (window.scrollY > 20) {
-      setTitle('Jason A Savage')
-      document.querySelector('#nav-header').classList.remove('sm:justify-end')
-      document.querySelector('#nav-header').classList.add('md:justify-center')
+      setTitle('A Savage')
+      document
+        .querySelector('#home-nav-header')
+        .classList.remove('sm:justify-end')
+      document
+        .querySelector('#home-nav-header')
+        .classList.add('md:justify-center')
       document.querySelector('#catholic').classList.remove('hidden')
     }
 
@@ -32,6 +40,7 @@ const HomePage = () => {
       document.querySelector('#father').classList.remove('hidden')
     }
     if (window.scrollY > 40) {
+      setTitle('Jason A Savage')
       document.querySelector('#husband').classList.remove('hidden')
     }
     if (window.scrollY > 50) {
@@ -40,9 +49,9 @@ const HomePage = () => {
 
     if (window.scrollY < 20) {
       setTitle('a Savage')
-      document.querySelector('#nav-header').classList.add('sm:justify-end')
+      document.querySelector('#home-nav-header').classList.add('sm:justify-end')
       document
-        .querySelector('#nav-header')
+        .querySelector('#home-nav-header')
         .classList.remove('md:justify-center')
       document.querySelector('#catholic').classList.add('hidden')
     }
@@ -64,7 +73,7 @@ const HomePage = () => {
   })
   return (
     <MainLayout>
-      <main>
+      <main id="home-main">
         <section id="home">
           <header>
             <h2 id="title">I am {title}</h2>
@@ -200,54 +209,73 @@ const HomePage = () => {
             <hr />
           </header>
           <section className="flex">
-            <article className="mx-5">Trendy Savages</article>
-            <article className="mx-5">OrthoAthletic</article>
+            <article className="mx-5 w-48">
+              <a href="https://shoptrendysavages.com">
+                <img src={trendySavages} />
+              </a>
+            </article>
+            <article className="mx-5 w-48">
+              <a href="https://orthoathletic.com">
+                <img src={orthoAthletic} />
+              </a>
+            </article>
           </section>
         </section>
       </main>
-      <footer className="border-t-2 pt-5">
-        <section id="contact" className="w-2/3 mx-auto">
-          <header>
-            <h2 className="text-3xl pl-2">Contact Me</h2>
-          </header>
-          <section>
-            <Form onSubmit={onSubmit} className="contact-form">
-              <Label name="name" errorClassName="error">
-                Name
-              </Label>
-              <TextField
-                name="name"
-                validation={{ required: true }}
-                errorClassName="error"
-              />
-              <FieldError name="name" className="error" />
-              <Label name="email" errorClassName="error">
-                Email
-              </Label>
-              <TextField
-                name="email"
-                validation={{ required: true }}
-                errorClassName="error"
-              />
-              <FieldError name="email" className="error" />
-              <Label name="message" errorClassName="error">
-                Message
-              </Label>
-              <TextAreaField
-                name="message"
-                validation={{ required: true }}
-                errorClassName="error"
-              />
-              <FieldError name="message" className="error" />
-              <Label name="preferred" className="inline mt-2">
-                <CheckboxField name="preferred" className="inline mr-4" />
-                Do you have a Preferred Project?
-              </Label>
-              <Submit className="mt-5 hover:bg-accent-dark active:bg-accent-dark">
-                Save
-              </Submit>
-            </Form>
+      <footer className="border-t-2 pt-5 flex flex-col">
+        <section className="flex flex-wrap justify-between px-5 md:flex-nowrap w-full md:w-2/3 mx-auto">
+          <section className="flex flex-col w-full md:w-2/3">
+            <img src={headshot} alt="Headshot" className="rounded-xl" />
           </section>
+          <section id="contact" className="w-full md:w-2/3 mx-auto">
+            <header>
+              <h2 className="text-3xl pl-2">Contact</h2>
+            </header>
+            <section>
+              <Form onSubmit={onSubmit} className="contact-form">
+                <Label name="name" errorClassName="error">
+                  Name
+                </Label>
+                <TextField
+                  name="name"
+                  validation={{ required: true }}
+                  errorClassName="error"
+                />
+                <FieldError name="name" className="error" />
+                <Label name="email" errorClassName="error">
+                  Email
+                </Label>
+                <TextField
+                  name="email"
+                  validation={{ required: true }}
+                  errorClassName="error"
+                />
+                <FieldError name="email" className="error" />
+                <Label name="message" errorClassName="error">
+                  Message
+                </Label>
+                <TextAreaField
+                  name="message"
+                  validation={{ required: true }}
+                  errorClassName="error"
+                />
+                <FieldError name="message" className="error" />
+                <Label name="preferred" className="inline mt-2">
+                  <CheckboxField name="preferred" className="inline mr-4" />
+                  Do you have a Preferred Project?
+                </Label>
+                <Submit className="mt-5 hover:bg-accent-dark active:bg-accent-dark">
+                  Save
+                </Submit>
+              </Form>
+            </section>
+          </section>
+        </section>
+        <section className="w-full md:w-2/3 mx-auto">
+          <hr />
+          <small>
+            &copy; The Savage Dev 2021. Made with Redwoodjs and TailwindCSS
+          </small>
         </section>
       </footer>
     </MainLayout>
