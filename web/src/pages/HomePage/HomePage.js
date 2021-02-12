@@ -12,7 +12,6 @@ import MainLayout from 'src/layouts/MainLayout/MainLayout'
 import headshot from '../../assets/images/headshot.png'
 import trendySavages from '../../assets/images/ts.png'
 import orthoAthletic from '../../assets/images/orthoathletic.png'
-import cross from '../../assets/images/flag.jpg'
 
 const HomePage = () => {
   const [title, setTitle] = useState('a Savage')
@@ -210,12 +209,20 @@ const HomePage = () => {
           </header>
           <section className="flex">
             <article className="mx-5 w-48">
-              <a href="https://shoptrendysavages.com">
+              <a
+                href="https://shoptrendysavages.com"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 <img src={trendySavages} />
               </a>
             </article>
             <article className="mx-5 w-48">
-              <a href="https://orthoathletic.com">
+              <a
+                href="https://www.orthoathleticedu.com/"
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+              >
                 <img src={orthoAthletic} />
               </a>
             </article>
