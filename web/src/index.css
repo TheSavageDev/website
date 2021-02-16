@@ -83,10 +83,6 @@
     @apply w-screen bg-brand-translucent h-screen flex flex-col justify-center items-center;
   }
 
-  #title {
-    @apply text-3xl;
-  }
-
   .jobs {
     @apply flex flex-wrap justify-center;
   }
@@ -127,5 +123,24 @@
 
   .service-card h3 {
     @apply text-2xl underline my-2 text-center;
+  }
+
+  /** Tic Tac Toe **/
+  .ttt_first-row,
+  .ttt_second-row {
+    @apply h-32 bg-accent-dark w-32 border-r border-b flex justify-center items-center text-7xl;
+  }
+
+  .ttt_first-row--end,
+  .ttt_second-row--end {
+    @apply h-32 bg-accent-dark w-32 border-b flex justify-center items-center text-7xl;
+  }
+
+  .ttt_third-row {
+    @apply h-32 bg-accent-dark w-32 border-r flex justify-center items-center text-7xl;
+  }
+
+  .ttt_third-row--end {
+    @apply h-32 bg-accent-dark w-32 flex justify-center items-center text-7xl;
   }
  }

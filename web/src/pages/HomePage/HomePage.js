@@ -14,7 +14,6 @@ import trendySavages from '../../assets/images/ts.png'
 import orthoAthletic from '../../assets/images/orthoathletic.png'
 
 const HomePage = () => {
-  const [title, setTitle] = useState('a Savage')
   const today = new Date()
   const month = today.getMonth()
   const age =
@@ -25,43 +24,19 @@ const HomePage = () => {
 
   const handleScroll = () => {
     if (window.scrollY > 20) {
-      setTitle('A Savage')
       document
         .querySelector('#home-nav-header')
         .classList.remove('sm:justify-end')
       document
         .querySelector('#home-nav-header')
         .classList.add('md:justify-center')
-      document.querySelector('#catholic').classList.remove('hidden')
-    }
-
-    if (window.scrollY > 30) {
-      document.querySelector('#father').classList.remove('hidden')
-    }
-    if (window.scrollY > 40) {
-      setTitle('Jason A Savage')
-      document.querySelector('#husband').classList.remove('hidden')
-    }
-    if (window.scrollY > 50) {
-      document.querySelector('#se').classList.remove('hidden')
     }
 
     if (window.scrollY < 20) {
-      setTitle('a Savage')
       document.querySelector('#home-nav-header').classList.add('sm:justify-end')
       document
         .querySelector('#home-nav-header')
         .classList.remove('md:justify-center')
-      document.querySelector('#catholic').classList.add('hidden')
-    }
-    if (window.scrollY < 30) {
-      document.querySelector('#father').classList.add('hidden')
-    }
-    if (window.scrollY < 40) {
-      document.querySelector('#husband').classList.add('hidden')
-    }
-    if (window.scrollY < 50) {
-      document.querySelector('#se').classList.add('hidden')
     }
   }
 
@@ -75,20 +50,22 @@ const HomePage = () => {
       <main id="home-main">
         <section id="home">
           <header>
-            <h2 id="title">I am {title}</h2>
+            <h2 id="title" className="text-4xl font-semibold">
+              I am Jason A Savage
+            </h2>
           </header>
           <section className="flex flex-wrap justify-between">
             <article className="jobs">
-              <span id="catholic" className="text-lg mx-2 hidden">
+              <span id="catholic" className="text-lg mx-2">
                 Catholic
               </span>
-              <span id="father" className="text-lg mx-2 hidden">
+              <span id="father" className="text-lg mx-2">
                 Father
               </span>
-              <span id="husband" className="text-lg mx-2 hidden">
+              <span id="husband" className="text-lg mx-2">
                 Husband
               </span>
-              <span id="se" className="text-lg mx-2 hidden">
+              <span id="se" className="text-lg mx-2">
                 Software Engineer
               </span>
             </article>
