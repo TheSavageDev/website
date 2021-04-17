@@ -18,69 +18,17 @@
     height: 100%;
   }
 
-  body {
-    height: 100vh;
-    @apply bg-background-dark text-white;
-  }
-
   #redwood-app {
     height: 100%;
   }
 
   #home-nav-header a,
   #blog-nav-header a {
-    @apply text-base mx-1 transition py-2 px-4 cursor-pointer hover:bg-brand;
-  }
-
-
-  #home-main {
-    @apply w-full m-0;
+    @apply text-base mx-1 py-2 px-4 cursor-pointer hover:text-yellow transition-colors duration-300;
   }
 
   #home-main hr {
-    @apply border-accent-dark w-20;
-  }
-
-  #home {
-    background-image: url('assets/images/cross.jpg');
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  #home::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    opacity: .2;
-  }
-
-  #about,
-  #services,
-  #work {
-    @apply p-5 bg-brand-dark max-h-full my-5 w-full rounded-xl transition-all duration-200 md:w-3/4 md:mx-auto lg:w-2/3;
-  }
-
-  #about header,
-  #services header,
-  #work header {
-    @apply mb-5;
-  }
-
-  #about header h2,
-  #services header h2,
-  #work header h2 {
-    @apply text-2xl;
-  }
-
-  /** Home Section **/
-  #home {
-    @apply w-screen bg-brand-translucent h-screen flex flex-col justify-center items-center;
+    @apply border-yellow w-20;
   }
 
   .jobs {
@@ -92,12 +40,8 @@
   }
 
   /** Contact Section **/
-  .contact-form {
-    @apply justify-center flex-col border-none border-gray-300 p-5 rounded-xl mb-5;
-  }
-
   .contact-form textarea {
-    @apply block p-1 text-base text-brand-dark rounded-xl overflow-auto border-gray-400 border-2 resize-none;
+    @apply block p-1 text-base text-primary rounded-xl overflow-auto border-gray-400 border-2 resize-none;
   }
 
   .contact-form label {
@@ -105,42 +49,33 @@
   }
 
   .contact-form button {
-    @apply block p-2 text-xl font-semibold bg-brand rounded-xl text-white;
+    @apply block p-2 text-xl font-semibold bg-primary rounded-xl text-white;
   }
 
   .contact-form input {
-    @apply border rounded-xl p-1 text-base text-brand-dark;
+    @apply rounded-xl p-1 text-base text-primary;
   }
 
   #contact .error {
-    @apply text-red-600 block
-  }
-
-  /** Service Section **/
-  .service-card {
-    @apply my-1 border border-brand-dark text-white p-5 bg-brand mx-5 rounded-xl transition transform hover:bg-brand-dark hover:text-white-light hover:border-white;
-  }
-
-  .service-card h3 {
-    @apply text-2xl underline my-2 text-center;
+    @apply text-warning block
   }
 
   /** Tic Tac Toe **/
   .ttt_first-row,
   .ttt_second-row {
-    @apply h-32 bg-accent-dark w-32 border-r border-b flex justify-center items-center text-7xl;
+    @apply h-32 bg-accent w-32 flex justify-center items-center text-5xl;
   }
 
   .ttt_first-row--end,
   .ttt_second-row--end {
-    @apply h-32 bg-accent-dark w-32 border-b flex justify-center items-center text-7xl;
+    @apply h-32 bg-accent w-32 flex justify-center items-center text-5xl;
   }
 
   .ttt_third-row {
-    @apply h-32 bg-accent-dark w-32 border-r flex justify-center items-center text-7xl;
+    @apply h-32 bg-accent w-32 flex justify-center items-center text-5xl;
   }
 
   .ttt_third-row--end {
-    @apply h-32 bg-accent-dark w-32 flex justify-center items-center text-7xl;
+    @apply h-32 bg-accent w-32 flex justify-center items-center text-5xl;
   }
  }
